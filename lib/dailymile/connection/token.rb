@@ -20,8 +20,8 @@ module Dailymile
     end
     
     def set_access_token(token)
-      @access_token = OAuth2::AccessToken.new(@client, token)
-      @access_token.token_param = 'oauth_token'
+      @access_token = OAuth2::AccessToken.new(@client, token, :param_name=>'oauth_token')
+      #@access_token.token_param = 'oauth_token'
     end
     
   end
