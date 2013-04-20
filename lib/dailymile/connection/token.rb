@@ -15,7 +15,8 @@ module Dailymile
   
     def request(verb, path, params = {}, headers = {})
       make_request(verb, path, params, headers) do |verb, path, params, headers|
-        @access_token.request(verb, path, params, headers)
+        params[:headers] = headers
+        @access_token.request(verb, path, params)
       end
     end
     
